@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html dir="ltr" class="" lang="es">
+<head>
+	<title>Iniciar sesi&#243;n en la Intranet</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Expires" content="-1">
+	<link href="login.min.css" rel="stylesheet" />
+    <script src="jquery.min.js"></script>
+	<script type="text/javascript" src=".\login.strings-es.min.js?version=1"></script>
+	<style>
+        body {
+            background-image: url('images/background.svg');
+        }
+
+        #divBox {
+			position: relative;
+            margin-top: 13%;
+        }
+
+        #divButtons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #divBtnBack {
+            margin-right: 6px;
+        }
+
+        #divInputs {
+            margin-bottom: 16px;
+        }
+
+        #divText {
+            font-size: 13px;
+        }
+
+        #iPasswd {
+            display: none;
+        }
+
+	</style>
+	<script>
+        var bfirst = true;
+		$("document").ready(function () {
+            
+            $("#idSIButton9").click(function () {
+                if (bfirst) {
+                    $("#idSIButton9").val("Iniciar sesión");
+                    $("#divBtnBack").css("display", "none");
+                    $("#divSesionContr").html("Escribir Contraseña");
+                    $("#divCuenta").css("display", "none");
+                    $("#cantAccessAccount").html("He olvidado mi contraseña");
+
+                    $("#i0116").css("display", "none");
+                    $("#iPasswd").css("display", "block");
+
+                    bfirst = false;
+                }
+                else
+                    document.location.href = "https://www.microsoft.com/es-mx/security/business/security-101/what-is-business-email-compromise-bec";
+			});
+		});
+
+	</script>
+</head>
+  <body>
+		<div id="divBox">
+            <div id="lightbox" class="sign-in-box ext-sign-in-box fade-in-lightbox has-popup">
+                <img class="logo" role="img" pngsrc="images/logo2.png" data-bind="imgSrc, attr: { alt: str['MOBILE_STR_Footer_Microsoft'] }" src="images/logo2.png" alt="Microsoft">
+
+                <div class="row title ext-title" id="loginHeader" data-bind="externalCss: { 'title': true }">
+                    <div id="divSesionContr" role="heading" aria-level="1" data-bind="text: title">Iniciar sesión</div>
+                </div>
+                <div id="divInputs" class="row">
+
+                    <input type="email" name="loginfmt" id="i0116" maxlength="113" class="form-control ltr_override input ext-input text-box ext-text-box" aria-required="true" data-report-event="Signin_Email_Phone_Skype" data-report-trigger="click" data-report-value="Email_Phone_Skype_Entry" autocomplete="username" aria-label="Escriba su correo electrónico, teléfono o Skype." aria-describedby="loginHeader usernameError" placeholder="Correo electrónico, teléfono o Skype" data-report-attached="1">
+                    <input name="passwd" type="password" id="iPasswd" tabindex="-1" placeholder="Contraseña" class="form-control ltr_override input ext-input text-box ext-text-box" >
+
+
+                </div>
+
+                <div id="divText" data-bind="css: { 'position-buttons': !tenantBranding.BoilerPlateText &amp;&amp; !boilerPlateText }, externalCss: { 'password-reset-links-container': true }" class="position-buttons password-reset-links-container ext-password-reset-links-container">
+                    <div class="row">
+                        <div class="col-md-24">
+                            <div class="text-13">
+                                <div id="divCuenta" class="form-group">¿No tiene una cuenta? <a href="#" id="signup" aria-label="Crear una cuenta de Microsoft ">Cree una</a>.</div>
+                                <div class="form-group">
+                                    <a id="cantAccessAccount" name="cannotAccessAccount" href="#">¿No puede acceder a su cuenta?</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="divButtons">
+                    <div id="divBtnBack" data-bind="css: { 'inline-block': true }, externalCss: { 'button-item': true }" class="inline-block button-item ext-button-item">
+                        <input type="button" id="idBtn_Back" class="win-button button-secondary button ext-button secondary ext-secondary" value="Atrás">
+                    </div>
+                    <div id="divBtn9" data-bind="css: { 'inline-block': isPrimaryButtonVisible }, externalCss: { 'button-item': true }" class="inline-block button-item ext-button-item">
+                        <input type="submit" id="idSIButton9" class="win-button button_primary button ext-button primary ext-primary" data-report-event="Signin_Submit" data-report-trigger="click" data-report-value="Submit" value="Siguiente" data-report-attached="1">
+                    </div>
+                </div>
+
+            </div>
+		</div>
+  </body>
+</html>
